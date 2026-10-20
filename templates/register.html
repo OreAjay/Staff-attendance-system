@@ -1,0 +1,74 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Staff Registration</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: #f4f6f8;
+            color: #222;
+        }
+
+        h1 {
+            color: #1f3a5f;
+        }
+
+        form {
+            background: white;
+            padding: 25px;
+            border-radius: 8px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 6px;
+        }
+
+        input {
+            width: 100%;
+            max-width: 350px;
+            padding: 10px;
+            margin-bottom: 18px;
+            box-sizing: border-box;
+        }
+
+        button {
+            padding: 10px 18px;
+            background-color: #1f3a5f;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        a {
+            color: #1756a9;
+        }
+    </style>
+</head>
+<body>
+    <h1>Register Staff</h1>
+
+    <form action="/register" method="POST">
+        <label for="staff_id">Staff ID:</label>
+        <input type="text" id="staff_id" name="staff_id" required>
+
+        <label for="full_name">Full Name:</label>
+        <input type="text" id="full_name" name="full_name" required>
+
+        <label for="department">Department:</label>
+        <input type="text" id="department" name="department" required>
+
+        <button type="submit">Register Staff</button>
+    </form>
+
+    <p><a href="/">Back to Home</a></p>
+</body>
+</html>

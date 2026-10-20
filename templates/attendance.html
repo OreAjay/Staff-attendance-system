@@ -1,0 +1,88 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance Records</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: #f4f6f8;
+            color: #222;
+        }
+
+        h1 {
+            color: #1f3a5f;
+        }
+
+        .summary {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+        }
+
+        th, td {
+            padding: 12px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+
+        th {
+            background-color: #1f3a5f;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f0f3f7;
+        }
+
+        a {
+            color: #1756a9;
+        }
+    </style>
+</head>
+<body>
+    <h1>Staff Attendance Records</h1>
+
+    {% if staff %}
+    <div class="summary">
+        <p>Staff Name: {{ staff[0] }}</p>
+        <p>Total Clock-ins: {{ total_clock_ins }}</p>
+        <p>Total Clock-outs: {{ total_clock_outs }}</p>
+    </div>
+    {% endif %}
+
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Staff ID</th>
+            <th>Action</th>
+            <th>Date and Time</th>
+        </tr>
+
+        {% for record in records %}
+        <tr>
+            <td>{{ record[0] }}</td>
+            <td>{{ record[1] }}</td>
+            <td>{{ record[2] }}</td>
+            <td>{{ record[3] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <p><a href="/staff">Back to Staff List</a></p>
+    <p><a href="/">Back to Home</a></p>
+</body>
+</html>

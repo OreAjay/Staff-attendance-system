@@ -1,0 +1,80 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Attendance Report</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: #f4f6f8;
+            color: #222;
+        }
+
+        h1 {
+            color: #1f3a5f;
+        }
+
+        .content {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+        }
+
+        th, td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+
+        th {
+            background-color: #1f3a5f;
+            color: white;
+        }
+
+        a {
+            color: #1756a9;
+        }
+    </style>
+</head>
+<body>
+    <h1>Daily Attendance Report</h1>
+
+    <div class="content">
+        <table>
+            <tr>
+                <th>Staff ID</th>
+                <th>Full Name</th>
+                <th>Department</th>
+                <th>Action</th>
+                <th>Date and Time</th>
+            </tr>
+
+            {% for record in records %}
+            <tr>
+                <td>{{ record[0] }}</td>
+                <td>{{ record[1] }}</td>
+                <td>{{ record[2] }}</td>
+                <td>{{ record[3] }}</td>
+                <td>{{ record[4] }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+
+    <p><a href="/">Back to Home</a></p>
+</body>
+</html>
